@@ -3,13 +3,15 @@ main: FlynnKunz\GamemodeUI\Main
 version: 1.0
 api: 4.0.0
 author: FlynnKunz
-description: "GamemodeUI Description"
+description: "Change gamemode with ui"
+website: https://github.com/FlynnKunz/GamemodeUI
 
 commands:
   gamemodeui:
     description: "Open GamemodeUI"
+    aliases: [gmui]
     permission: gamemodeui.cmd
-    
+   
 permissions:
   gamemodeui.cmd:
     description: "GamemodeUI Permission"
