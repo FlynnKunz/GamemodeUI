@@ -1,0 +1,16 @@
+name: GamemodeUI
+main: FlynnKunz\GamemodeUI\Main
+version: 1.0
+api: 4.0.0
+author: FlynnKunz
+description: "GamemodeUI Description"
+
+commands:
+  gamemodeui:
+    description: "Open GamemodeUI"
+    permission: gamemodeui.cmd
+    
+permissions:
+  gamemodeui.cmd:
+    description: "GamemodeUI Permission"
+    default: op
