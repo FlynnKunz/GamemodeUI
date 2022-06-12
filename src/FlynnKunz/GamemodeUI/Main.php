@@ -5,6 +5,7 @@ namespace FlynnKunz\GamemodeUI;
 
 use pocketmine\Server;
 use pocketmine\player\Player;
+use pocketmine\player\GameMode;
 
 use pocketmine\command\{Command, CommandSender};
 use pocketmine\utils\Config;
@@ -18,10 +19,13 @@ use pocketmine\event\Listener;
 use FormAPI\{CustomForm, SimpleForm};
 
 class Main extends PluginBase {
+	
+    public Config $config;
     
     public function onEnable() : void{
     	$this->saveResource("config.yml");
-        $this->config = new Config($this->getDataFolder() . "config.yml", Config::YAML, array());
+        $this->config = new Config($this->getDataFolder() . "config.yml");
+	$this->saveDefaultConfig();
     }
 
     public function onCommand(CommandSender $sender, Command $cmd, String $label, Array $args) : bool {
@@ -33,7 +37,7 @@ class Main extends PluginBase {
         return true;
     }
     
-    public function gmdUI($player){
+    public function gmdUI(Player $player){
         $form = new SimpleForm(function(Player $player, int $data = null){
             if($data === null){
                 return true;
@@ -41,22 +45,22 @@ class Main extends PluginBase {
             $target = $player->getName();
             switch($data){
                 case 0:
-                    $this->getServer()->getCommandMap()->dispatch($player, "gamemode survival");
+                    $player->setGamemode(GameMode::SURVIVAL());
                     $player->sendMessage("Changed gamemode to Survival mode");
                 break;
                 
                 case 1:
-				    $this->getServer()->getCommandMap()->dispatch($player, "gamemode c");
+	            $player->setGamemode(GameMode::CREATIVE());
                     $player->sendMessage("Changed gamemode to Creative mode");
                 break;
                 
                 case 2:
-                    $this->getServer()->getCommandMap()->dispatch($player, "gamemode adventure");
+                    $player->setGamemode(GameMode::ADVENTURE());
                     $player->sendMessage("Changed gamemode to Adventure mode");
                 break;
                 
                 case 3:
-                     $this->getServer()->getCommandMap()->dispatch($player, "gamemode 3");
+                     $player->setGamemode(GameMode::SPECTATOR());
                     $player->sendMessage("Changed gamemode to Spectator mode");
                 break;
             }
