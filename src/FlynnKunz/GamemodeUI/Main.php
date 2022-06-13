@@ -16,7 +16,7 @@ use pocketmine\plugin\Plugin;
 use pocketmine\plugin\PluginBase;
 use pocketmine\event\Listener;
 
-use FormAPI\{CustomForm, SimpleForm};
+use Vecnavium\FormsUI\SimpleForm;
 
 class Main extends PluginBase {
 	
