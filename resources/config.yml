@@ -24,7 +24,7 @@ GamemodeUI:
 # ======(MESSAGES FORMS)======
 Messages:
   survival: "§eYour game mode has been changed to §dSURVIVAL"
-  creative: "Your game mode has been changed to §dCREATIVE"
-  adventure: "Your game mode has been changed to §dADVENTURE"
-  spectator: "Your game mode has been changed to §dSPECTATOR"
+  creative: "§eYour game mode has been changed to §dCREATIVE"
+  adventure: "§eYour game mode has been changed to §dADVENTURE"
+  spectator: "§eYour game mode has been changed to §dSPECTATOR"
 ---
