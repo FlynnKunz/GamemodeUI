@@ -5,6 +5,7 @@ branches:
 projects:
   GamemodeUI:
     path: ""
+    icon: icon-gm.png
     libs:
       - src: Vecnavium/FormsUI/FormsUI
         version: ^1.0.0
