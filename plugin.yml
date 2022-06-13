@@ -2,7 +2,7 @@ name: GamemodeUI
 main: FlynnKunz\GamemodeUI\Main
 version: 1.0
 api: 4.0.0
-author: FlynnKunz
+authors: [FlynnKunz, fernanACM]
 description: "Change gamemode with ui"
 website: https://github.com/FlynnKunz/GamemodeUI
 
