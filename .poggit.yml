@@ -5,4 +5,9 @@ branches:
 projects:
   GamemodeUI:
     path: ""
+    libs:
+      - src: Vecnavium/FormsUI/FormsUI
+        version: ^1.0.0
+    lint:
+      phpstan: false
 ...
