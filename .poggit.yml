@@ -5,5 +5,10 @@ branches:
 projects:
   GamemodeUI:
     path: ""
-    icon: icon.png
+    icon: icon-gm.png
+    libs:
+      - src: Vecnavium/FormsUI/FormsUI
+        version: ^1.0.0
+    lint:
+      phpstan: false
 ...
