@@ -5,4 +5,5 @@ branches:
 projects:
   GamemodeUI:
     path: ""
+    icon: icon.png
 ...
