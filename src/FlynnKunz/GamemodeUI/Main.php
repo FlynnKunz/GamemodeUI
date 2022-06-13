@@ -7,33 +7,38 @@ use pocketmine\Server;
 use pocketmine\player\Player;
 use pocketmine\player\GameMode;
 
-use pocketmine\command\{Command, CommandSender};
+use pocketmine\command\Command;
+use pocketmine\command\CommandSender;
 use pocketmine\utils\Config;
-use pocketmine\utils\TextFormat;
-use pocketmine\task\scheduler\Task;
 
-use pocketmine\plugin\Plugin;
 use pocketmine\plugin\PluginBase;
-use pocketmine\event\Listener;
 
 use Vecnavium\FormsUI\SimpleForm;
+# PluginUtils by fernanACM
+use FlynnKunz\GamemodeUI\utils\PluginUtils;
 
 class Main extends PluginBase {
 	
     public Config $config;
     
     public function onEnable() : void{
-    	$this->saveResource("config.yml");
-        $this->config = new Config($this->getDataFolder() . "config.yml");
-	$this->saveDefaultConfig();
+    	  $this->saveResource("config.yml");
+          $this->config = new Config($this->getDataFolder() . "config.yml");
+	  $this->saveDefaultConfig();
     }
 
-    public function onCommand(CommandSender $sender, Command $cmd, String $label, Array $args) : bool {
-        
-        if($cmd->getName() == "gamemodeui"){
-            $this->gmdUI($sender);
+    public function onCommand(CommandSender $sender, Command $command, string $label, array $args): bool{
+        switch ($command->getName()) {
+            case "gamemodeui":
+                if($sender instanceof Player) {
+                           $this->gmdUI($sender);
+                           PluginUtils::PlaySound($sender, "random.chestopen", 1, 1);
+                     } else {
+                             $sender->sendMessage("Use this command in-game");
+                              return true;
+                     }
+            break;
         }
-        
         return true;
     }
     
@@ -42,30 +47,37 @@ class Main extends PluginBase {
             if($data === null){
                 return true;
             }
-            $target = $player->getName();
             switch($data){
                 case 0:
-	            $prefix = $this->config->get("Prefix");
+	             $prefix = $this->config->get("Prefix");
                     $player->setGamemode(GameMode::SURVIVAL());
                     $player->sendMessage($prefix . $this->config->getNested("Messages.survival"));
+                    PluginUtils::PlaySound($player, "random.pop", 1, 1);
                 break;
                 
                 case 1:
-	            $prefix = $this->config->get("Prefix");
-	            $player->setGamemode(GameMode::CREATIVE());
+	                $prefix = $this->config->get("Prefix");
+	                $player->setGamemode(GameMode::CREATIVE());
                     $player->sendMessage($prefix . $this->config->getNested("Messages.creative"));
+                    PluginUtils::PlaySound($player, "random.pop", 1, 1);
                 break;
                 
                 case 2:
-	            $prefix = $this->config->get("Prefix");
+	                $prefix = $this->config->get("Prefix");
                     $player->setGamemode(GameMode::ADVENTURE());
                     $player->sendMessage($prefix . $this->config->getNested("Messages.adventure"));
+                    PluginUtils::PlaySound($player, "random.pop", 1, 1);
                 break;
                 
                 case 3:
-	            $prefix = $this->config->get("Prefix");
+	               $prefix = $this->config->get("Prefix");
                     $player->setGamemode(GameMode::SPECTATOR());
                     $player->sendMessage($prefix . $this->config->getNested("Messages.spectator"));
+                    PluginUtils::PlaySound($player, "random.pop", 1, 1);
+                break;
+                    
+                case 4:
+                    PluginUtils::PlaySound($player, "random.pop2", 1.5, 3.4);
                 break;
             }
         });
