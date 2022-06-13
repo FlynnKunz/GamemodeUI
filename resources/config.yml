@@ -1,16 +1,30 @@
 ---
 # GamemodeUI plugin
-# Made By FlynnKunz
+# Made By FlynnKunz and fernanACM
 
 ##############################
 
 # Use "§" as formatting codes
 # Use "\n" to break into new line
-
-title: "Change in config.yml"
-# Set The Title
-
-content: "Change in config.yml"
-#Set The Content
-
+# ======(PREFIX)======
+Prefix: "§l§7[§eGM§7]§8»§r "
+# ======(MESSAGES FORMS)======
+GamemodeUI:
+  # Set The Title
+  title: "§l§9GAMEMODE MENU"
+  # Set The Content
+  content: "§eSelect your game mode:"
+  # Buttons
+  button-survival: "§2§lSurvival\n§r§0Tap To Change"
+  button-creative: "§2§lCreative\n§r§0Tap To Change"
+  button-adventure: "§2§lAdventure\n§r§0Tap To Change"
+  button-spectator: "§2§lSpectator\n§r§0Tap To Change"
+  button-exit: "§4§lEXIT§r\n§r§0Tap To Change"
+  
+# ======(MESSAGES FORMS)======
+Messages:
+  survival: "§eYour game mode has been changed to §dSURVIVAL"
+  creative: "Your game mode has been changed to §dCREATIVE"
+  adventure: "Your game mode has been changed to §dADVENTURE"
+  spectator: "Your game mode has been changed to §dSPECTATOR"
 ---
