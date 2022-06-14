@@ -38,6 +38,19 @@
     creative: "§eYour game mode has been changed to §dCREATIVE"
     adventure: "§eYour game mode has been changed to §dADVENTURE"
     spectator: "§eYour game mode has been changed to §dSPECTATOR"
+# ======(MESSAGES FORMS)======
+Messages:
+  survival: "§eYour game mode has been changed to §dSURVIVAL"
+  creative: "Your game mode has been changed to §dCREATIVE"
+  adventure: "Your game mode has been changed to §dADVENTURE"
+  spectator: "Your game mode has been changed to §dSPECTATOR"
+
+# ======(MESSAGES FORMS)======
+NoPermissionMessages:
+  survival: "§4You Dont Have Permission To Use This Commands"
+  creative: "§4You Dont Have Permission To Use This Commands"
+  adventure: "§4You Dont Have Permission To Use This Commands"
+  spectator: "§4You Dont Have Permission To Use This Commands"
 ```
 
 ### 💡 Implementations
