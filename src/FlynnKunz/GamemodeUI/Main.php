@@ -49,31 +49,51 @@ class Main extends PluginBase {
             }
             switch($data){
                 case 0:
+if($player->hasPermission("gamemodeui.survival")){
+
 	             $prefix = $this->config->get("Prefix");
                     $player->setGamemode(GameMode::SURVIVAL());
                     $player->sendMessage($prefix . $this->config->getNested("Messages.survival"));
                     PluginUtils::PlaySound($player, "random.pop", 1, 1);
+                  } else {
+                    $player->sendMessage($this->config->getNested("NoPermissionMessages.survival"));
+                  }
                 break;
                 
                 case 1:
+if($player->hasPermission("gamemodeui.creative")){
+
 	                $prefix = $this->config->get("Prefix");
 	                $player->setGamemode(GameMode::CREATIVE());
                     $player->sendMessage($prefix . $this->config->getNested("Messages.creative"));
                     PluginUtils::PlaySound($player, "random.pop", 1, 1);
+                  } else {
+                    $player->sendMessage($this->config->getNested("NoPermissionMessages.creative"));
+                  }
                 break;
                 
                 case 2:
+if($player->hasPermission("gamemodeui.adventure")){
+
 	                $prefix = $this->config->get("Prefix");
                     $player->setGamemode(GameMode::ADVENTURE());
                     $player->sendMessage($prefix . $this->config->getNested("Messages.adventure"));
                     PluginUtils::PlaySound($player, "random.pop", 1, 1);
+                  } else {
+                    $player->sendMessage($this->config->getNested("NoPermissionMessages.adventure"));
+                  }
                 break;
                 
                 case 3:
+if($player->hasPermission("gamemodeui.spectator")){
+
 	               $prefix = $this->config->get("Prefix");
                     $player->setGamemode(GameMode::SPECTATOR());
-                    $player->sendMessage($prefix . $this->config->getNested("Messages.spectator"));
+                    $player->sendMessage($prefix . $this->config->getNested(""));
                     PluginUtils::PlaySound($player, "random.pop", 1, 1);
+                  } else {
+                    $player->sendMessage($this->config->getNested("NoPermissionMessages.spectator"));
+                  }
                 break;
                     
                 case 4:
