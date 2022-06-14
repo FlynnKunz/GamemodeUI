@@ -1,6 +1,6 @@
 name: GamemodeUI
 main: FlynnKunz\GamemodeUI\Main
-version: 1.0
+version: 1.1
 api: 4.0.0
 authors: [FlynnKunz, fernanACM]
 description: "Change gamemode with ui"
@@ -14,5 +14,19 @@ commands:
    
 permissions:
   gamemodeui.cmd:
-    description: "GamemodeUI Permission"
+    description: "Permission To Open GamemodeUI"
+    default: true
+
+  gamemodeui.survival:
+    description: "Permission To Use Survival Gamemode"
+    default: op
+
+  gamemodeui.creative:
+    description: "Permission To Use Creative Gamemode"
+    default: op
+  gamemodeui.adventure:
+    description: "Permission To Use Adventure Gamemode"
+    default: op
+  gamemodeui.spectator:
+    description: "Permission To Use Spectator Gamemode"
     default: op
