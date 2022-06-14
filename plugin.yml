@@ -15,7 +15,7 @@ commands:
 permissions:
   gamemodeui.cmd:
     description: "Permission To Open GamemodeUI"
-    default: true
+    default: op
 
   gamemodeui.survival:
     description: "Permission To Use Survival Gamemode"
