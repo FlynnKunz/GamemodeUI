@@ -31,7 +31,7 @@ class Main extends PluginBase {
         switch ($command->getName()) {
             case "gamemodeui":
                 if($sender instanceof Player) {
-                           $this->gmdUI($sender);
+                           $this->gmUI($sender);
                            PluginUtils::PlaySound($sender, "random.chestopen", 1, 1);
                      } else {
                              $sender->sendMessage("Use this command in-game");
@@ -42,7 +42,7 @@ class Main extends PluginBase {
         return true;
     }
     
-    public function gmdUI(Player $player){
+    public function gmUI(Player $player){
         $form = new SimpleForm(function(Player $player, int $data = null){
             if($data === null){
                 return true;
@@ -89,7 +89,7 @@ if($player->hasPermission("gamemodeui.spectator")){
 
 	               $prefix = $this->config->get("Prefix");
                     $player->setGamemode(GameMode::SPECTATOR());
-                    $player->sendMessage($prefix . $this->config->getNested(""));
+                    $player->sendMessage($prefix . $this->config->getNested("Messages.spectator"));
                     PluginUtils::PlaySound($player, "random.pop", 1, 1);
                   } else {
                     $player->sendMessage($this->config->getNested("NoPermissionMessages.spectator"));
